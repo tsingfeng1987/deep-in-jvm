@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body >
+<iframe id="iframe" src="https://www.baidu.com" style="vertical-align: center"></iframe>
+<button onclick="onIframeLoad();">加链接</button>
+</body>
+<script>
+
+    function onIframeLoad() {
+        var iframe = document.getElementById("iframe")[0];
+        var innerDoc=iframe.contentDocument;
+        var aTag = innerDoc.createElement("a");
+        aTag.setAttribute("href", "http://www.baidu.com");
+        aTag.innerHTML = "Baidu";
+        var wrapper = innerDoc.getElementsByClassName("wrapper");
+        wrapper.appendChild(aTag);
+    }
+</script>
+</html>
